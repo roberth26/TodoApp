@@ -1,12 +1,12 @@
-define( [ 'jquery', 'Component' ], function( $, Component ) {
-	return function Row() {
+define( [ 'jquery', 'Component' ],
+	function( $, Component ) {
 		return Component.extend({
-			render:	function( props ) {
+			render:	function() {
 				return (
 					$( '<div />', {
 						style: 'margin: 0 -15px 15px -15px'
 					}).append(
-						props.children
+						this.getProps().children
 					).append(
 						$( '<div style="clear:both;"></div>' )
 					)
@@ -14,4 +14,4 @@ define( [ 'jquery', 'Component' ], function( $, Component ) {
 			}
 		});
 	}
-});
+);

@@ -1,20 +1,33 @@
 define( [ 'GlobalStyles' ], function( GlobalStyles ) {
 	return {
 		header: {
-			background: GlobalStyles.mainColor,
-			borderBottom: '1px solid ' + GlobalStyles.mainColorBorder,
-			height: 100,
-			boxShadow: 'rgba(0, 0, 0, 0.3) 0px 1px 4px'
+			background: '-webkit-linear-gradient(top, rgb(29, 62, 99) 0%, rgb(15, 33, 53) 100%)',
+			borderBottom: '1px solid black',
+			height: 60,
+			boxShadow: 'rgba(0, 0, 0, 0.3) 0px 1px 4px',
+			padding: 10,
+			marginBottom: 30
 		},
 		title: {
-			fontSize: 32,
+			float: 'left',
+			fontSize: '2.4rem',
 			lineHeight: '1',
-			color: 'white',
+			color: GlobalStyles.mainFontColor,
 			textShadow: '0px -1px 0px rgba( 0, 0, 0, .4 )',
-			padding: '20px 0 10px 0'
+			lineHeight: '40px',
+			height: 40
 		},
 		link: {
-			color: 'white'
+			color: GlobalStyles.mainFontColor,
+			float: 'right',
+			lineHeight: '30px',
+			height: 30,
+   			textDecoration: 'none',
+    		border: '1px solid ' + GlobalStyles.mainFontColor,
+   			padding: '0px 15px',
+    		marginTop: 5,
+		    borderRadius: 3,
+		    fontSize: '1.2rem',
 		},
 		container: GlobalStyles.container
 	};

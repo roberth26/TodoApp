@@ -10,7 +10,7 @@ define( [ 'GlobalStyles' ], function( GlobalStyles ) {
         },
         list_item: {
         	padding: '8px 0',
-        	borderBottom: '1px solid lightgrey',
+        	borderBottom: '1px solid rgb( 48, 91, 140 )',
             color: GlobalStyles.mainFontColor
         }
 	};

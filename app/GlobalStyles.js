@@ -8,7 +8,7 @@ define( [ 'jquery' ], function( $ ) {
 	return $.extend( true, {}, {
 		mainColor: '#ffa800',
 		mainColorBorder: '#CC8330',
-		mainFontColor: 'rgb( 60, 60, 60 )',
+		mainFontColor: 'rgb( 186, 218, 255 )',
 		secondaryColor: '#C1C1C1',
 		container: {
 			maxWidth: 990,

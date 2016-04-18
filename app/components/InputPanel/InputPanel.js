@@ -8,26 +8,36 @@ define( [ 'jquery', 'Component', 'Panel/Panel', './Styles' ],
 					this.getProps().createTodo( formData[ 0 ].value, formData[ 1 ].value );
 			},
 			render: function() {
+				var props = this.getProps();
 				return (
 					new Panel({
-						id: this.getProps().id + 'Panel__',
+						id: props.id + 'Panel__',
 						title: 'Create a To-do',
-						onClose: this.getProps().removeChild.bind( null, this.getProps().index ),
+						onClose: props.removeComponent.bind( null, props.index ),
 						children: [
 							$( '<form />' ).append([
-								$( '<input />', {
-									type: 'text',
-									name: 'TodoName',
-									placeholder: 'Add a to-do...'
-								}),
+								$( '<div />', {
+									css: Styles.inputGroup
+								}).append(
+									$( '<input />', {
+										type: 'text',
+										name: 'TodoName',
+										css: Styles.textField,
+										placeholder: 'I need to...'
+									}),
+									$( '<button />', {
+										text: 'Create',
+										type: 'submit',
+										css: Styles.button
+									}),
+									$( '<div style="clear:both;"></div>' )
+								),
 								$( '<textarea />', {
 									name: 'TodoDescription',
-									placeholder: 'Description...'
+									placeholder: 'Description',
+									css: Styles.textArea
 								}),
-								$( '<button />', {
-									text: 'Add',
-									type: 'submit'
-								})
+
 							]).submit( this.handleCreateTodo )
 						]
 					})

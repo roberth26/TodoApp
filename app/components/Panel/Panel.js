@@ -24,13 +24,13 @@ define( [ 'jquery', 'Component', './Styles' ],
 							css: Styles.header
 						}).append(
 							$( '<button />', {
-								text: 'close',
-								css: Styles.button
+								html: '&times;',
+								css: Styles.closeBtn
 							}).click( this.handleClose )			
 						).append(
 							$( '<button />', {
-								text: this.getState().isMinimized ? 'expand' : 'minimize',
-								css: Styles.button
+								html: this.getState().isMinimized ? '+' : '&ndash;',
+								css: Styles.minimizeBtn
 							}).click( this.handleMinimize )
 						).append(
 							$( '<h3 />', {

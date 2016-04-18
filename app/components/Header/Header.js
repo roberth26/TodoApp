@@ -18,13 +18,13 @@ define( [ 'jquery', 'Component', './Styles' ],
 							css: Styles.container
 						}).append(
 							$( '<h1 />', {
-								text: 'To-Do App',
+								text: 'To-do App',
 								css: Styles.title
 							})
 						).append(
 							$( '<a />', {
 								text: 'View Repository',
-								href: 'https://github.com/roberth26/todo_app',
+								href: 'https://github.com/roberth26/TodoApp',
 								target: '_blank',
 								css: Styles.link
 							})

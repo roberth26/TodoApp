@@ -10,7 +10,9 @@ define( [ 'jquery', 'Component', './Styles' ],
 			render: function() {
 				var props = this.getProps();
 				return (
-					$( '<li />' ).append(
+					$( '<li />', {
+						css: Styles.listItem
+					}).append(
 						$( '<div />', {
 							css: Styles.container
 						}).append([
