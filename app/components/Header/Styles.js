@@ -5,7 +5,7 @@ define( [ 'GlobalStyles' ], function( GlobalStyles ) {
 			borderBottom: '1px solid black',
 			height: 60,
 			boxShadow: 'rgba(0, 0, 0, 0.3) 0px 1px 4px',
-			padding: 10,
+			padding: '10px 0',
 			marginBottom: 30
 		},
 		title: {

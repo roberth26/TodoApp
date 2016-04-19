@@ -17,14 +17,13 @@ define( function ( require ) {
 		state: {
 			todos: [], /* savedTodos ? savedTodos : [] */
 			children: [
-				'InputPanel',
+				'InfoPanel',
 				'TodoList',
-				'InfoPanel'
+				'InputPanel',
 			],
 			sidebarChildren: [
-				'MacroPanel',
-				'InfoPanel',
-				'PanelManager'
+				'PanelManager',
+				'MacroPanel'
 			]
 		},
 		saveState: function() {
@@ -32,7 +31,7 @@ define( function ( require ) {
 		},
 		createTodo: function( todoTitle, todoDescription ) {
 			var todos = this.getState().todos;
-			todos.push({
+			todos.unshift({
 				title: todoTitle,
 				description: todoDescription,
 				completed: false,
@@ -71,7 +70,6 @@ define( function ( require ) {
 			}
 		},
 		completeTodo: function( index ) {
-			console.log( 'CompleteTodo()' );
 			var todos = this.getState().todos;
 			todos[ index ].completed = true;
 			todos[ index ].endTime = new Date();
@@ -130,6 +128,14 @@ define( function ( require ) {
 			});
 			this.saveState();
 		},
+		addComponent: function( componentName ) {
+			var children = this.getState().children;
+			children.push( componentName );
+			this.setState({
+				children: children
+			});
+			this.saveState();
+		},
 		createComponent: function( componentName ) {
 			switch( componentName ) {
 				case 'InfoPanel':
@@ -166,9 +172,9 @@ define( function ( require ) {
 									$( '<div />', {
 										'class': state.sidebarChildren.length ? 'col_9' : 'col'
 									}).append(
-										state.children.map( function( child, index ) {
+										state.children.reverse().map( function( child, index ) {
 											return new this.createComponent( child )({
-												id: 'AppChild-0' + ( index + 1 ),
+												id: 'AppChild-0' + ( Math.random() * 10000 ),
 												index: index,
 												todos: state.todos,
 												createTodo: this.createTodo,
@@ -179,6 +185,7 @@ define( function ( require ) {
 												completeAllTodos: this.completeAllTodos,
 												resetTodo: this.resetTodo,
 												resetAllTodos: this.resetAllTodos,
+												addComponent: this.addComponent,
 												removeComponent: this.removeChild
 											});
 										}.bind( this ))
@@ -189,7 +196,7 @@ define( function ( require ) {
 									$( '<div />', {
 										'class': state.children.length ? 'col_3' : 'col'
 									}).append(
-										state.sidebarChildren.map( function( child, index ) {
+										state.sidebarChildren.reverse().map( function( child, index ) {
 											return new this.createComponent( child )({
 												id: 'AppSidebarChild-0' + ( index + 1 ),
 												index: index,
@@ -202,6 +209,7 @@ define( function ( require ) {
 												completeAllTodos: this.completeAllTodos,
 												resetTodo: this.resetTodo,
 												resetAllTodos: this.resetAllTodos,
+												addComponent: this.addComponent,
 												removeComponent: this.removeSidebarChild
 											});
 										}.bind( this ))

@@ -19,21 +19,25 @@ define( function ( require ) {
 								css: Styles.container
 							}).append([
 								$( '<button />', {
-									text: 'Complete All',
+									text: 'TodoList',
 									css: Styles.button
-								}).click( props.completeAllTodos ),
+								}).click( props.addComponent.bind( null, 'TodoList' ) ),
 								$( '<button />', {
-									text: 'Reset All',
+									text: 'PanelManager',
 									css: Styles.button
-								}).click( props.resetAllTodos ),
+								}).click( props.addComponent.bind( null, 'PanelManager' ) ),
 								$( '<button />', {
-									text: 'Remove Completed',
+									text: 'InfoPanel',
 									css: Styles.button
-								}).click( props.removeCompletedTodos ),
+								}).click( props.addComponent.bind( null, 'InfoPanel' ) ),
 								$( '<button />', {
-									text: 'Remove All',
+									text: 'InputPanel',
 									css: Styles.button
-								}).click( props.removeAllTodos )
+								}).click( props.addComponent.bind( null, 'InputPanel' ) ),
+								$( '<button />', {
+									text: 'MacroPanel',
+									css: Styles.button
+								}).click( props.addComponent.bind( null, 'MacroPanel' ) ),
 							])
 						)
 					]
