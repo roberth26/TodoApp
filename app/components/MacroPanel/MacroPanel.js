@@ -7,27 +7,32 @@ define( [ 'jquery', 'Component', 'Panel/Panel', './Styles' ],
 					new Panel({
 						id: props.id + 'Panel__',
 						title: 'Macros',
+						onClose: props.removeComponent.bind( null, props.index ),
 						children: [
-							$( '<button />', {
-								text: 'button',
-								css: Styles.button
-							}),
-							$( '<button />', {
-								text: 'button',
-								css: Styles.button
-							}),
-							$( '<button />', {
-								text: 'button',
-								css: Styles.button
-							}),
-							$( '<button />', {
-								text: 'button',
-								css: Styles.button
-							}),
-							$( '<button />', {
-								text: 'button',
-								css: Styles.buttonLast
-							})
+							$( '<div />', {
+								css: Styles.wrapper
+							}).append(
+								$( '<div />', {
+									css: Styles.container
+								}).append([
+									$( '<button />', {
+										text: 'Complete All',
+										css: Styles.button
+									}).click( props.completeAllTodos ),
+									$( '<button />', {
+										text: 'Reset All',
+										css: Styles.button
+									}).click( props.resetAllTodos ),
+									$( '<button />', {
+										text: 'Remove Completed',
+										css: Styles.button
+									}).click( props.removeCompletedTodos ),
+									$( '<button />', {
+										text: 'Remove All',
+										css: Styles.button
+									}).click( props.removeAllTodos )
+								])
+							)
 						]
 					})
 				);

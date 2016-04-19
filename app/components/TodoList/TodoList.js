@@ -21,10 +21,10 @@ define( [ 'jquery', 'Component', 'Panel/Panel', 'TodoListItem/TodoListItem', './
 									$( '<ul />', {
 										css: Styles.list
 									}).append(
-										props.todos.map( function( todo, index ) {
+										props.todos.reverse().map( function( todo, index ) {
 											return (
 												new TodoListItem({
-													id: 'TodoListItem-0' + ( index + 1 ),
+													id: 'TodoListItem-0' + ( todo.id ),
 													todo: todo,
 													index: index,
 													removeTodo: props.removeTodo,

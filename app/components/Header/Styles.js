@@ -1,7 +1,7 @@
 define( [ 'GlobalStyles' ], function( GlobalStyles ) {
 	return {
 		header: {
-			background: '-webkit-linear-gradient(top, rgb(29, 62, 99) 0%, rgb(15, 33, 53) 100%)',
+			backgroundColor: 'rgb( 15, 33, 53 )',
 			borderBottom: '1px solid black',
 			height: 60,
 			boxShadow: 'rgba(0, 0, 0, 0.3) 0px 1px 4px',
@@ -13,7 +13,7 @@ define( [ 'GlobalStyles' ], function( GlobalStyles ) {
 			fontSize: '2.4rem',
 			lineHeight: '1',
 			color: GlobalStyles.mainFontColor,
-			textShadow: '0px -1px 0px rgba( 0, 0, 0, .4 )',
+			textShadow: '0px -2px 0px black',
 			lineHeight: '40px',
 			height: 40
 		},
