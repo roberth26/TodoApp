@@ -11,11 +11,17 @@ define( function ( require ) {
     var PanelManager = require( 'PanelManager/PanelManager' );
     var Styles       = require( './Styles' );
 
-    var savedTodos = JSON.parse( window.localStorage.getItem( '__TodoAppState__' ) );
+    var savedState = JSON.parse( window.localStorage.getItem( 'state' ) );
+    if ( savedState ) {
+	    $.each( savedState.todos, function( index, todo ) {
+	    	todo.startTime = new Date( todo.startTime );
+	    	todo.endTime = new Date( todo.endTime );
+	    });
+	}
 
 	return Component.extend({
-		state: {
-			todos: [], /* savedTodos ? savedTodos : [] */
+		state: savedState ? savedState : {
+			todos: [],
 			children: [
 				'InfoPanel',
 				'TodoList',
@@ -27,7 +33,7 @@ define( function ( require ) {
 			]
 		},
 		saveState: function() {
-			//window.localStorage.setItem( 'Todos', JSON.stringify( this.getState().todos ) );
+			window.localStorage.setItem( 'state', JSON.stringify( this.getState() ) );
 		},
 		createTodo: function( todoTitle, todoDescription ) {
 			var todos = this.getState().todos;

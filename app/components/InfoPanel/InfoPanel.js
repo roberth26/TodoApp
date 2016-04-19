@@ -34,44 +34,40 @@ define( function ( require ) {
 								}).append(
 									$( '<ul />', {
 										css: Styles.list
-									}).append(
+									}).append([
 										$( '<li />', {
 											css: Styles.list_item,
 											html: '<strong>Todos:</strong> ' + count
-										})
-									).append(
+										}),
 										$( '<li />', {
 											css: Styles.list_item,
 											html: '<strong>Completed:</strong> ' + completed
-										})
-									).append(
+										}),
 										$( '<li />', {
 											css: Styles.list_item,
 											html: '<strong>Progress:</strong> ' + percentage.toFixed( 2 ) + '%'
 										})
-									)
+									])
 								),
 								$( '<div />', {
 									'class': 'col_6'
 								}).append(
 									$( '<ul />', {
 										css: Styles.list
-									}).append(
+									}).append([
 										$( '<li />', {
 											css: Styles.list_item,
 											html: '<strong>Recently Completed:</strong>'
-										})
-									).append(
+										}),
 										mostRecent ? $( '<li />', {
 											css: Styles.list_item,
 											html: mostRecent.title
-										}) : null
-									).append(
+										}) : null,
 										mostRecent ? $( '<li />', {
 											css: Styles.list_item,
 											html: '<strong>Elapsed:</strong> ' + DateFormatter.difference( mostRecent.startTime, mostRecent.endTime )
 										}) : null
-									)
+									])
 								)
 							]
 						})									
