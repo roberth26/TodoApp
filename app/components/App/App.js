@@ -2,7 +2,6 @@ define( function ( require ) {
     var $            = require( 'jquery' );
     var Component    = require( 'Component' );
     var Row          = require( 'Row/Row' );
-    var Styles       = require( './Styles' );
     var Header       = require( 'Header/Header' );
     var InputPanel   = require( 'InputPanel/InputPanel' );
     var TodoList     = require( 'TodoList/TodoList' );
