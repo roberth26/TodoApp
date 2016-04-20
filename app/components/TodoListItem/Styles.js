@@ -5,6 +5,8 @@ define( [ 'jquery', 'GlobalStyles' ], function( $, GlobalStyles ) {
 	var button = {
 		width: 24,
 		height: 24,
+		position: 'absolute',
+		top: 4,
 		borderRadius: 5,
 		lineHeight: '22px',
 		fontSize: '16px',
@@ -39,13 +41,9 @@ define( [ 'jquery', 'GlobalStyles' ], function( $, GlobalStyles ) {
 			textDecoration: 'line-through'
 		}),
 		deleteBtn: $.extend( {}, button, {
-			position: 'absolute',
-			top: 5,
 			right: 10
 		}),
 		infoBtn: $.extend( {}, button, {
-			position: 'absolute',
-			top: 4,
 			right: 40
 		}),
 		arrowDown: {
