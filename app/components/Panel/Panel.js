@@ -28,12 +28,12 @@ define( function ( require ) {
 					}).append(
 						$( '<button />', {
 							html: '&times;',
-							css: Styles.closeBtn
+							css: Styles.button
 						}).click( this.handleClose )			
 					).append(
 						$( '<button />', {
 							html: this.getState().isMinimized ? '+' : '&ndash;',
-							css: Styles.minimizeBtn
+							css: Styles.button
 						}).click( this.handleMinimize )
 					).append(
 						$( '<h3 />', {
