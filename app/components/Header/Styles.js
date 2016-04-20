@@ -1,4 +1,16 @@
-define( [ 'GlobalStyles' ], function( GlobalStyles ) {
+define( [ 'jquery', 'GlobalStyles' ], function( $, GlobalStyles ) {
+	var btn = {
+		color: GlobalStyles.mainFontColor,
+		float: 'right',
+		lineHeight: '30px',
+		height: 30,
+		textDecoration: 'none',
+		border: '1px solid ' + GlobalStyles.mainFontColor,
+		padding: '0px 15px',
+		marginTop: 5,
+	    borderRadius: 3,
+	    fontSize: '1.2rem'
+	};
 	return {
 		header: {
 			backgroundColor: 'rgb( 15, 33, 53 )',
@@ -17,19 +29,10 @@ define( [ 'GlobalStyles' ], function( GlobalStyles ) {
 			lineHeight: '40px',
 			height: 40
 		},
-		link: {
-			color: GlobalStyles.mainFontColor,
-			float: 'right',
-			lineHeight: '30px',
-			height: 30,
-   			textDecoration: 'none',
-    		border: '1px solid ' + GlobalStyles.mainFontColor,
-   			padding: '0px 15px',
-    		marginTop: 5,
-		    borderRadius: 3,
-		    fontSize: '1.2rem',
-		    marginLeft: 10
-		},
+		resetBtn: $.extend( {}, btn, {
+			marginLeft: 10
+		}),
+		repoBtn: btn,
 		container: GlobalStyles.container
 	};
 });

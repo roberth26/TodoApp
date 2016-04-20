@@ -24,13 +24,13 @@ define( function ( require ) {
 						$( '<a />', {
 							text: 'Reset State',
 							href: '#',
-							css: Styles.link
+							css: Styles.resetBtn
 						}).click( this.handleClick ),
 						$( '<a />', {
-							text: 'View Repository',
+							text: 'Repo',
 							href: 'https://github.com/roberth26/TodoApp',
 							target: '_blank',
-							css: Styles.link
+							css: Styles.repoBtn
 						})
 					])
 				)
