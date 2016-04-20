@@ -4,18 +4,21 @@ define( [ 'jquery', 'GlobalStyles' ], function( $, GlobalStyles ) {
 		backgroundColor: 'rgb( 30, 61, 97 )'
 	};
 	var button = {
-		float: 'right',
+		position: 'absolute',
+		top: 0,
+		right: 0,
 		cursor: 'pointer',
 		backgroundColor: 'transparent',
-		border: '1px solid rgb( 24, 40, 58 )',
-		boxShadow: 'inset 0 1px 0 rgb( 135, 200, 255 ), 0 1px 0 rgb( 135, 200, 255 )',
+		border: 0,
+		borderLeft: '1px solid rgb( 24, 40, 58 )',
+		boxShadow: 'inset 1px 0 0 rgb( 135, 200, 255 )',
 		color: GlobalStyles.mainFontColor,
 		textShadow: '0 1px 0 rgb( 135, 200, 255 )',
-		height: 20,
-		lineHeight: '20px',
+		height: '100%',
+		width: '40px',
+		lineHeight: '40px',
 		color: 'rgb( 24, 40, 58 )',
-		fontSize: '1.6rem',
-		fontWeight: 'bold',
+		fontSize: '2.4rem',
 		padding: '0 10px'
 	};
 	return {
@@ -27,19 +30,19 @@ define( [ 'jquery', 'GlobalStyles' ], function( $, GlobalStyles ) {
 		},
 		header: {
 			backgroundColor: 'rgb( 73, 159, 255 )',
-			padding: 10,
+			padding: '10px 0 10px 10px',
 			height: 40,
 			borderBottom: '1px solid rgb( 24, 40, 58 )',
-			borderTop: '1px solid rgb( 135, 200, 255 )'
+			borderTop: '1px solid rgb( 135, 200, 255 )',
+			position: 'relative'
 		},
 		minimizeBtn: $.extend( {}, button, {
-			borderTopLeftRadius: 5,
-			borderBottomLeftRadius: 5
+			right: 40
 		}),
 		closeBtn: $.extend( {}, button, {
-			borderTopRightRadius: 5,
-			borderBottomRightRadius: 5,
-			borderLeft: 0
+			//borderTopRightRadius: 5,
+			//borderBottomRightRadius: 5,
+			//borderLeft: 0
 		}),
 		content: content,
 		contentMinimized: $.extend( {}, content, {

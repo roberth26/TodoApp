@@ -75,7 +75,9 @@ define( [ 'jquery', 'GlobalStyles' ], function( $, GlobalStyles ) {
             padding: '5px 0'
         },
         description: {
-            marginBottom: 10
+            marginBottom: 10,
+    		lineHeight: 1.5,
+			marginTop: -4
         }
 	};
 });
