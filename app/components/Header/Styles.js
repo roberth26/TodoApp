@@ -28,6 +28,7 @@ define( [ 'GlobalStyles' ], function( GlobalStyles ) {
     		marginTop: 5,
 		    borderRadius: 3,
 		    fontSize: '1.2rem',
+		    marginLeft: 10
 		},
 		container: GlobalStyles.container
 	};

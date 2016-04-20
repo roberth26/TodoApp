@@ -18,21 +18,27 @@ define( function ( require ) {
 	    });
 	}
 
+	var defaultState = {
+		todos: [],
+		children: [
+			'InfoPanel',
+			'TodoList',
+			'InputPanel',
+		],
+		sidebarChildren: [
+			'PanelManager',
+			'MacroPanel'
+		]
+	};
+
 	return Component.extend({
-		state: savedState ? savedState : {
-			todos: [],
-			children: [
-				'InfoPanel',
-				'TodoList',
-				'InputPanel',
-			],
-			sidebarChildren: [
-				'PanelManager',
-				'MacroPanel'
-			]
-		},
+		state: savedState ? savedState : defaultState,
 		saveState: function() {
 			window.localStorage.setItem( 'state', JSON.stringify( this.getState() ) );
+		},
+		resetState: function() {
+			this.setState( defaultState );
+			this.saveState();
 		},
 		createTodo: function( todoTitle, todoDescription ) {
 			var todos = this.getState().todos;
@@ -164,7 +170,8 @@ define( function ( require ) {
 				}).append(
 					new Header({
 						id: 'Header-01__',
-						text: 'Hello'
+						text: 'Hello',
+						resetState: this.resetState
 					})
 				).append( 
 					$( '<div />', {
