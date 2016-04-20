@@ -45,7 +45,7 @@ define( [ 'jquery', 'GlobalStyles' ], function( $, GlobalStyles ) {
 		}),
 		infoBtn: $.extend( {}, button, {
 			position: 'absolute',
-			top: 5,
+			top: 4,
 			right: 40
 		}),
 		arrowDown: {
