@@ -21,13 +21,13 @@ define( function ( require ) {
 	var defaultState = {
 		todos: [],
 		children: [
-			'InfoPanel',
-			'TodoList',
 			'InputPanel',
+			'TodoList',
+			'InfoPanel'
 		],
 		sidebarChildren: [
-			'PanelManager',
-			'MacroPanel'
+			'MacroPanel',
+			'PanelManager'
 		]
 	};
 
@@ -141,7 +141,7 @@ define( function ( require ) {
 		},
 		addComponent: function( componentName ) {
 			var children = this.getState().children;
-			children.push( componentName );
+			children.unshift( componentName );
 			this.setState({
 				children: children
 			});
@@ -184,7 +184,7 @@ define( function ( require ) {
 									$( '<div />', {
 										'class': state.sidebarChildren.length ? 'col_9' : 'col'
 									}).append(
-										state.children.reverse().map( function( child, index ) {
+										state.children.map( function( child, index ) {
 											return new this.createComponent( child )({
 												id: 'AppChild-0' + ( Math.random() * 10000 ),
 												index: index,
@@ -208,7 +208,7 @@ define( function ( require ) {
 									$( '<div />', {
 										'class': state.children.length ? 'col_3' : 'col'
 									}).append(
-										state.sidebarChildren.reverse().map( function( child, index ) {
+										state.sidebarChildren.map( function( child, index ) {
 											return new this.createComponent( child )({
 												id: 'AppSidebarChild-0' + ( index + 1 ),
 												index: index,

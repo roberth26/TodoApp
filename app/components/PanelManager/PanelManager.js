@@ -11,6 +11,7 @@ define( function ( require ) {
 				new Panel({
 					id: props.id + 'Panel__',
 					title: 'Panels',
+					onClose: props.removeComponent.bind( null, props.index ),
 					children: [
 						$( '<div />', {
 							css: Styles.wrapper
