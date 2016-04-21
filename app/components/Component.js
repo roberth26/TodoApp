@@ -64,7 +64,6 @@ define( [ 'jquery' ], function( $ ) {
 			$el = template;
 
 			$el.data( 'state', state );
-			$el.data( 'props', props );
 			$el.attr( 'data-id', id );
 			return $el;
 		};
