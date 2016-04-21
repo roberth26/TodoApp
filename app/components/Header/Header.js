@@ -4,12 +4,8 @@ define( function ( require ) {
     var Styles    = require( './Styles' );
 
 	return Component.extend({
-		handleClick: function( e ) {
-			e.preventDefault();
-			if ( confirm( 'Are you sure you want to reset the app state and lose all changes and data?' ) )
-				this.getProps().resetState();
-		},
 		render: function() {
+			var props = this.getProps();
 			return (
 				$( '<header />', {
 					css: Styles.header
@@ -25,7 +21,7 @@ define( function ( require ) {
 							text: 'Reset State',
 							href: '#',
 							css: Styles.resetBtn
-						}).click( this.handleClick ),
+						}).click( props.resetState ),
 						$( '<a />', {
 							text: 'Repo',
 							href: 'https://github.com/roberth26/TodoApp',

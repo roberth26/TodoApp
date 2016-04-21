@@ -25,22 +25,21 @@ define( function ( require ) {
 				}).append(
 					$( '<div />', {
 						css: Styles.header
-					}).append(
+					}).append([
 						$( '<button />', {
 							html: '&times;',
 							css: Styles.button
-						}).click( this.handleClose )			
-					).append(
+						}).click( this.handleClose ),
 						$( '<button />', {
 							html: this.getState().isMinimized ? '+' : '&ndash;',
 							css: Styles.button
-						}).click( this.handleMinimize )
-					).append(
+						}).click( this.handleMinimize ),
 						$( '<h3 />', {
 							text: this.getProps().title,
 							css: Styles.title
-						})
-					).append( $( '<div style="clear:both;"></div>' ) ) // clearfix
+						}),
+						$( '<div style="clear:both;"></div>' ) // clearfix
+					])
 				).append(
 					$( '<div />', {
 						css: this.getState().isMinimized ? Styles.contentMinimized : Styles.content

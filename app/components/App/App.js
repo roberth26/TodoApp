@@ -37,8 +37,10 @@ define( function ( require ) {
 			window.localStorage.setItem( 'state', JSON.stringify( this.getState() ) );
 		},
 		resetState: function() {
-			this.setState( defaultState );
-			this.saveState();
+			if ( confirm( 'Are you sure you want to reset the app state and lose all changes and data?' ) ) {
+				this.setState( defaultState );
+				this.saveState();
+			}
 		},
 		createTodo: function( todoTitle, todoDescription ) {
 			var todos = this.getState().todos;
