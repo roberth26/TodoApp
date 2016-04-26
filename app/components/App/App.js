@@ -188,7 +188,7 @@ define( function ( require ) {
 									}).append(
 										state.children.map( function( child, index ) {
 											return new this.createComponent( child )({
-												id: 'AppChild-0' + ( Math.random() * 10000 ),
+												id: 'AppChild-0' + ( index + 1 ),
 												index: index,
 												todos: state.todos,
 												createTodo: this.createTodo,
