@@ -19,10 +19,12 @@ define( function ( require ) {
 					title: 'Create a To-do',
 					onClose: props.removeComponent.bind( null, props.index ),
 					children: [
-						$( '<form />' ).append([
+						$( '<form />', {
+							submit: this.handleCreateTodo
+						}).append([
 							$( '<div />', {
 								css: Styles.inputGroup
-							}).append(
+							}).append([
 								$( '<input />', {
 									type: 'text',
 									name: 'TodoName',
@@ -35,14 +37,13 @@ define( function ( require ) {
 									css: Styles.button
 								}),
 								$( '<div style="clear:both;"></div>' )
-							),
+							]),
 							$( '<textarea />', {
 								name: 'TodoDescription',
 								placeholder: 'Description',
 								css: Styles.textArea
-							}),
-
-						]).submit( this.handleCreateTodo )
+							})
+						])
 					]
 				})
 			);

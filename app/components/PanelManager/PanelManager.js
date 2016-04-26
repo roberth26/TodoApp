@@ -21,24 +21,29 @@ define( function ( require ) {
 							}).append([
 								$( '<button />', {
 									text: 'TodoList',
-									css: Styles.button
-								}).click( props.addComponent.bind( null, 'TodoList' ) ),
+									css: Styles.button,
+									click: props.addComponent.bind( null, 'TodoList' )
+								}),
 								$( '<button />', {
 									text: 'PanelManager',
-									css: Styles.button
-								}).click( props.addComponent.bind( null, 'PanelManager' ) ),
+									css: Styles.button,
+									click: props.addComponent.bind( null, 'PanelManager' )
+								}),
 								$( '<button />', {
 									text: 'InfoPanel',
-									css: Styles.button
-								}).click( props.addComponent.bind( null, 'InfoPanel' ) ),
+									css: Styles.button,
+									click: props.addComponent.bind( null, 'InfoPanel' )
+								}),
 								$( '<button />', {
 									text: 'InputPanel',
-									css: Styles.button
-								}).click( props.addComponent.bind( null, 'InputPanel' ) ),
+									css: Styles.button,
+									click: props.addComponent.bind( null, 'InputPanel' )
+								}),
 								$( '<button />', {
 									text: 'MacroPanel',
-									css: Styles.button
-								}).click( props.addComponent.bind( null, 'MacroPanel' ) ),
+									css: Styles.button,
+									click: props.addComponent.bind( null, 'MacroPanel' )
+								}),
 							])
 						)
 					]

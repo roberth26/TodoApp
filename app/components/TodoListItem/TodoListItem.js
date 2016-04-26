@@ -33,8 +33,9 @@ define( function ( require ) {
 						$( '<input />', {
 							type: 'checkbox',
 							css: Styles.checkbox,
-							checked: props.todo.completed
-						}).change( this.handleChange ),
+							checked: props.todo.completed,
+							change: this.handleChange
+						}),
 						$( '<span />', {
 							text: props.todo.title,
 							css: props.todo.completed ? Styles.titleCompleted : Styles.title
@@ -48,8 +49,9 @@ define( function ( require ) {
 						).click( this.handleExpand ),
 						$( '<button />', {
 							html: '&times;',
-							css: Styles.deleteBtn
-						}).click( props.removeTodo.bind( null, props.index ) )
+							css: Styles.deleteBtn,
+							click: props.removeTodo.bind( null, props.index )
+						})
 					])
 				).append(
 					!state.isExpanded ? null :

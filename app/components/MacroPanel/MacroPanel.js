@@ -21,20 +21,24 @@ define( function ( require ) {
 							}).append([
 								$( '<button />', {
 									text: 'Complete All',
-									css: Styles.button
-								}).click( props.completeAllTodos ),
+									css: Styles.button,
+									click: props.completeAllTodos
+								}),
 								$( '<button />', {
 									text: 'Reset All',
-									css: Styles.button
-								}).click( props.resetAllTodos ),
+									css: Styles.button,
+									click: props.resetAllTodos
+								}),
 								$( '<button />', {
 									text: 'Remove Completed',
-									css: Styles.button
-								}).click( props.removeCompletedTodos ),
+									css: Styles.button,
+									click: props.removeCompletedTodos
+								}),
 								$( '<button />', {
 									text: 'Remove All',
-									css: Styles.button
-								}).click( props.removeAllTodos )
+									css: Styles.button,
+									click: props.removeAllTodos
+								})
 							])
 						)
 					]
