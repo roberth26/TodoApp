@@ -4,6 +4,10 @@ define( function ( require ) {
     var Styles    = require( './Styles' );
 
 	return Component.extend({
+		handleClick: function( e ) {
+			e.preventDefault();
+			this.getProps().resetState();
+		},
 		render: function() {
 			var props = this.getProps();
 			return (
@@ -20,8 +24,9 @@ define( function ( require ) {
 						$( '<a />', {
 							text: 'Reset State',
 							href: '#',
-							css: Styles.resetBtn
-						}).click( props.resetState ),
+							css: Styles.resetBtn,
+							click: this.handleClick
+						}),
 						$( '<a />', {
 							text: 'Repo',
 							href: 'https://github.com/roberth26/TodoApp',
