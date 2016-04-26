@@ -13,8 +13,8 @@ requirejs.config({
 requirejs( [ 'jquery', 'App/App' ], function( $, App ) {
 	$( document ).ready( function() {
 		var app = new App({
-			id: 'App-01__'
-		});;
+			id: 'App__'
+		});
 		$( '#app_container' ).append( app ); // mount
 	});
 });

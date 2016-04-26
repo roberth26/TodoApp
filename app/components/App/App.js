@@ -171,7 +171,7 @@ define( function ( require ) {
 					css: Styles.app
 				}).append(
 					new Header({
-						id: 'Header-01__',
+						id: props.id + 'Header__',
 						text: 'Hello',
 						resetState: this.resetState
 					})
@@ -180,7 +180,7 @@ define( function ( require ) {
 						css: Styles.container
 					}).append(
 						new Row({
-							id: props.id + 'App__Row__',
+							id: props.id + 'Row__',
 							children: [
 								state.children.length ?
 									$( '<div />', {
@@ -188,7 +188,7 @@ define( function ( require ) {
 									}).append(
 										state.children.map( function( child, index ) {
 											return new this.createComponent( child )({
-												id: 'AppChild-0' + ( index + 1 ),
+												id: props.id + 'AppChild-0' + ( index + 1 ) + '__' + child + '__',
 												index: index,
 												todos: state.todos,
 												createTodo: this.createTodo,
@@ -212,7 +212,7 @@ define( function ( require ) {
 									}).append(
 										state.sidebarChildren.map( function( child, index ) {
 											return new this.createComponent( child )({
-												id: 'AppSidebarChild-0' + ( index + 1 ),
+												id: props.id + 'AppSidebarChild-0' + ( index + 1 ) + '__' + child + '__',
 												index: index,
 												todos: state.todos,
 												createTodo: this.createTodo,
