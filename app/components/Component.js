@@ -28,13 +28,10 @@ define( [ 'jquery' ], function( $ ) {
 			return id;
 		}
 
-		var $el = $().attr( 'id', id );
+		var $el = $().attr( 'data-id', id );
 
 		var state = this.state ? this.state : {};
 		delete this.state; // remove public access
-
-		var $rootNode = this.root;
-		delete this.root; // remove public access
 
 		var $children = this.children;
 		delete this.children; // remove public access
