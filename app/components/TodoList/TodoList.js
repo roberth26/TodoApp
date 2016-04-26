@@ -29,7 +29,7 @@ define( function ( require ) {
 									props.todos.map( function( todo, index ) {
 										return (
 											new TodoListItem({
-												id: 'TodoListItem-0' + ( todo.id ),
+												id: props.id + 'Panel__TodoListItem-0' + ( index + 1 ) + '__',
 												todo: todo,
 												index: index,
 												removeTodo: props.removeTodo,

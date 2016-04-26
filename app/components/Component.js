@@ -28,7 +28,7 @@ define( [ 'jquery' ], function( $ ) {
 			return id;
 		}
 
-		var $el = $().attr( 'data-id', id );
+		var $el = $( '<div />' ).attr( 'data-id', id );
 
 		var state = this.state ? this.state : {};
 		delete this.state; // remove public access
