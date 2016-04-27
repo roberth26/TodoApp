@@ -41,7 +41,8 @@ define( [ 'jquery' ], function( $ ) {
 			return $.extend( true, {}, state );
 		};
 
-		// public method that
+		// public method to change the state
+		// triggers a re-render
 		this.setState = function( newState ) {
 			$.extend( state, newState );
 			this.render();
